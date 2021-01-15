@@ -13,7 +13,7 @@ SECRET_KEY = '7^09bpy74=1574_6n$5n&ku%7zl28(h(h^q2%h#1meczr*$_l%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['akash25274.pythonanywhere.com']
+ALLOWED_HOSTS = ['akash25274.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -115,3 +115,9 @@ MEDIA_URL = '/media/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+try:
+     from personal_portfolio.local_settings import *
+except ImportError:
+    print("Looks like no local file.You must be on production.")
